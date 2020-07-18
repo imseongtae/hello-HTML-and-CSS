@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex Navbar</title>
+    <style>
+        html, body
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header
+        {   
+            margin-top: 20px;
+            height: 50px;
+            background-color: green;
+            border: 2px solid black;
+
+            display: flex;
+        }
+        .logo
+        {
+            background-color: yellowgreen;
+            height: 50px;
+            line-height: 50px;
+            width: 50px;
+            text-align: center;
+
+        }
+        .search
+        {
+            /* margin-right: auto; */
+            /* margin: 0 auto; */
+            /* flex: 1; */
+
+            /* padding-left: 10px;
+            height: 50px;
+            line-height: 50px; */
+
+            display: flex;
+            padding: 10px;
+        }
+        .search input 
+        {
+            flex: 1;
+            /* flex: 1 1 0 */
+        }
+        .gnb
+        {
+            /* 왼쪽에서 오른쪽으로 아이템을 밀어 가장 오른쪽에 위치 시킨다. */
+            margin-left: auto;
+
+            background-color: royalblue;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            width: 80px;
+            
+        }
+        .logo,
+        .search,
+        .gnb
+        {
+            /* none은 flex: 0 0 auto 부모요소의 크기에 영향을 받지 않는다. */
+            flex: none;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="header">
+        <!-- 자식 -->
+        <span class="logo">logo</span>
+        <div class="search">
+            <input type="text">
+            <button>검색</button>
+        </div>
+        <!-- //자식 -->
+        <div class="gnb">gnb</div>
+    </div>
+
+
+    <pre>
+        .gnb만 오른쪽으로 정렬시키는 방법 2가지
+        첫번째 .search 에 flex: 1을 적용하여 .gnb만 오른쪽으로 밀어낸다. 
+
+        <mark>두번째 margin-left: auto; 를 활용하여 .gnb를 최대한 오른쪽으로 밀어낸다.</mark>
+
+        * flex: none 을 설정하면 부모요소의 크기에 영향을 받지 않는다.
+        /* flex: none === flex: 0 0 auto */
+
+    </pre>
+</body>
+</html>

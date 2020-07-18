@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Navbar</title>
+    <style>
+        html, body
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header
+        {   
+            margin-top: 20px;
+            height: 50px;
+            background-color: green;
+            position: relative;
+            border: 2px solid black;
+        }
+        .header::after
+        {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .logo
+        {
+            background-color: yellowgreen;
+            height: 50px;
+            line-height: 50px;
+            width: 50px;
+            text-align: center;
+            float: left;
+        }
+        .search
+        {
+            float: left;
+
+            padding-left: 10px;
+            height: 50px;
+            line-height: 50px;
+            /* width: 200px; */
+        }
+        .gnb
+        {
+            background-color: royalblue;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            width: 50px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="header">
+        <span class="logo">logo</span>
+        <div class="search">
+            <input type="text">
+            <button>검색</button>
+        </div>
+        <div class="gnb">gnb</div>
+    </div>
+
+</body>
+</html>

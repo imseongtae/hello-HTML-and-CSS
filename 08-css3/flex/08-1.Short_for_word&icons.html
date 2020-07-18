@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/3a6bd51134.js"></script>
+    <title>Short for words and icons</title>
+    <style>
+        
+        .list_fixed
+        {
+            border: 2px solid #000;
+            border-radius: 10px;
+        }
+
+        .title_wrap
+        {
+
+        }
+
+
+        .title
+        {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            
+            
+        }
+
+        .school_type {
+            margin-left: 4px;
+            /* padding-left: 10px; */
+            display: inline-block;
+            float: right;
+        }
+
+        /* Don't touch */
+        .sp_icon {
+            display: inline-block;
+            background-image: url(https://test-img.land.naver.com/static/beta-service/ver/feature-828/pc/img/sprites/sp_map.png);
+            background-image: url(https://test-img.land.naver.com/static/beta-service/ver/feature-828/pc/img/sprites/sp_map.svg), none;
+            background-size: 283px 249px;
+        }
+        .school_type[aria-label='가정'] .sp_icon {
+            background-position: -253px -62px;
+            width: 26px;
+            height: 16px;
+        }
+        .school_type[aria-label='통학차량'] .sp_icon {
+            background-position: -132px -34px;
+            width: 44px;
+            height: 16px;
+        }
+
+        /* .sp_icon {
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url(https://test-img.land.naver.com/static/beta-service/ver/feature-828/pc/img/sprites/sp_map.png);
+            background-image: url(https://test-img.land.naver.com/static/beta-service/ver/feature-828/pc/img/sprites/sp_map.svg), none;
+            background-size: 283px 249px;
+        } */
+
+        .school_type[aria-label='공립'] .sp_icon {
+            background-position: -148px -206px;
+            width: 26px;
+            height: 16px;
+        }
+
+        /* .sp_icon {
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url(https://test-img.land.naver.com/static/beta-service/ver/feature-828/pc/img/sprites/sp_map.png);
+            background-image: url(https://test-img.land.naver.com/static/beta-service/ver/feature-828/pc/img/sprites/sp_map.svg), none;
+            background-size: 283px 249px;
+        } */
+    </style>
+
+</head>
+
+<body>
+
+    <h1>플롯을 하고 이미지가 앞에 와야 한다. 그러면 접근성상 옳지 못하다..!
+        타이틀은 블록 요소이므로 아이콘을 제외하고 100%를 채울 수 있다.
+    </h1>
+    <p>
+        하지만 이 방법은 플롯 속성이 먼저 선언되어야 하므로 아이콘 영역이 타이틀 보다 마크업 순서상 
+        앞에 와야 한다.!! 이것은 접근성상 좋은 구조가 아니다!!
+    </p>
+    <hr>
+    <div class="list_fixed">
+        <div class="title_wrap">
+            <span class="school_type" role="img" aria-label="가정"><i class="sp_icon"></i></span>
+            <span class="school_type" role="img" aria-label="통학차량"><i class="sp_icon"></i></span>
+            <span class="school_type" role="img" aria-label="공립"><i class="sp_icon"></i></span>
+            <h3 class="title">조건에 맞는 총 10000000개의 매물이 있습니다. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, deserunt!</h3>
+        </div>
+    </div>
+
+</body>
+
+</html>

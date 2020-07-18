@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex Footer</title>
+    <style>
+        body, html
+        {
+            padding: 0; margin: 0;
+            height: 100%; width: 100%;
+        }
+        .wrap 
+        {
+            height: 100%; width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+       
+        .main
+        {
+            /* flex: 1; */
+            /* flex 값을 1로 하지 않아도! footer 요소가 바닥으로 붙는다.! */
+            background-color: aquamarine;
+        }
+        footer
+        {
+            height: 100px;
+            background-color: brown;
+            margin-top: auto;
+        }
+    
+    </style>
+</head>
+
+<body>
+
+
+    <div class="wrap">
+        <div class="main">
+            메인내용입니다.
+        </div>
+        <footer>
+            이용약관매물신고운영개인정보처리방침부동산 고객센터
+
+            네이버부동산은 제휴 부동산 정보업체가 전송한 매물 정보가 노출될 수 있도록 광고 플랫폼 및 부동산 관련 정보를 제공하며, 제휴 부동산 정보업체가 네이버 부동산으로 전송한 매물 정보 및 이와
+            관련한 실제 거래에 대하여
+            어떠한 책임도 부담하지 않습니다.
+            Copyright ⓒ NAVER Corp. All Rights Reserved.
+        </footer>
+    </div>
+
+
+</body>
+
+</html>

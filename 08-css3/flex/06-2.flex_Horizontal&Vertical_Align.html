@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Horizontal & Vertical Align</title>
+    <script src="https://kit.fontawesome.com/3a6bd51134.js"></script>
+
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: 20px;
+            width: 200px;
+            height: 200px;
+            display: flex;            
+        }
+
+        .box1 {
+            background-color: green;
+            
+        }
+
+        .box2 {
+            background-color: skyblue;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box3 {
+            background-color: yellowgreen;
+            justify-content: center;
+            align-items: center;
+        }
+
+        i {
+            font-size: 50px;
+            color: #fff;
+            /* background-color: #fff; */
+            text-align: center;
+        }
+        .auto
+        {
+            margin: auto;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <h1>중앙정렬을 하는 다양한 방법들</h1>
+    <br>
+
+    <strong>자식 요소에 margin: auto 만으로 정렬하는 방법</strong>
+    <div class="container box1">
+        <i class="fab fa-invision auto"></i>
+    </div>
+
+    <div class="container box2">
+        <i class="fab fa-invision "></i>
+    </div>
+
+    <div class="container box3">
+        <i class="fab fa-invision"></i>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fluid-Width Box</title>
+    <style>
+        .wrap 
+        {
+            display: flex;
+            align-items: center;
+
+            border: 2px solid black;
+            height: 50px;
+            width: 100%;
+        }
+        .item 
+        {
+            margin: 5px;
+            height: 30px;
+            background-color: skyblue;
+            display: block;
+            border: 1px solid #777;
+            border-radius: 8px;
+            
+            min-width: 30px;
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .box1
+        {   
+
+
+            box-sizing: border-box;
+
+        }
+        .box2 
+        {
+
+        }
+        .box3
+        {
+
+        }
+        .box4 
+        {
+            order: -1;
+        }
+        .menu 
+        {
+            margin-right: 5px;
+            margin-left: auto;
+            height: 30px;
+            border: 1px solid #444;
+            border-radius: 5px;
+
+            background-color: skyblue;
+            display: block;
+
+        }
+
+        
+    </style>
+</head>
+<body>
+    
+    <h2>유동 넓이 박스를 통해서 유동 너비 안의 요소 및 박스들의 크기를 자유롭게 조정할 수 있다.</h2>
+    <h3>그리고 order 속성을 통해서 순서를 바꿀 수 있다.div 속성 중 제일 마지막에 나와야 할 box4가 첫요소인 것을 살피자!! </h3>
+    <div class="wrap">
+        <div class="item box1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, fugit.</div>
+        <div class="item box2">Lorem, ipsum dolor.</div>
+        <div class="item box3">box3 happy</div>
+        <div class="item box4">box4</div>
+        <button class="menu">Menu</button>
+    </div>
+
+</body>
+</html>
