@@ -30,4 +30,4 @@ HTML과 CSS를 학습하며 만든 작업물입니다.
 
 ## UI development
 - 도로에서 자전거를 타는 UI 제작
-- [UI development 링크](https://imseongtae.github.io/hello-HTML-and-CSS/contents/haemil_ver_2/)
+- UI development 는 현재 저장소를 다운로드하여 실행해야 함
