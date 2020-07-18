@@ -1,0 +1,252 @@
+@charset "utf-8";
+
+/* header.js 에서 사용할 클래스 */
+.marginTop {
+    margin-top: 60px;
+}
+
+/* HEADER */
+#header {
+    width: 100%;
+    position: relative;
+    top: 0; left: 0;
+    z-index: 99;
+
+    background-color: #fff;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .3);
+    font-family: 'Gaegu', cursive;
+    
+    user-select: none;
+}
+#header.hidden {
+    display: none;
+}
+
+#header.navbar_fixed { position: fixed }
+
+#header .header_container {
+    /* width: calc(100% - 120px);
+    margin: 0 60px; */
+    width: calc(100% - 60px);
+    margin: 0 30px;
+    overflow: hidden;
+    
+}
+
+/* 데스크탑 가로 해상도가 992px 보다 큰 화면에 적용 */
+@media (min-width: 992px) {
+    #header .header_container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
+
+/* 데스크탑 가로 해상도가 1200px 보다 큰 화면에 적용 */
+@media (min-width: 1200px) {
+    #header .header_container {
+        max-width: 1000px;
+    }
+    
+}
+
+#header h1.logo {
+    /* !원래 내 방법  float으로 좌우를 나눌텐데 */
+    color: #222;
+    line-height: 60px;
+    height: 60px;
+    display: inline-block;
+    
+    cursor: pointer;
+}
+#header h1.logo img { 
+    float: left;
+    display: inline-block;
+    /* position: absolute;
+    top: 50%;
+    transform: translateY(-50%); */
+    /* ! 새로 작성해보기 */
+    max-width: 55px;
+    max-height:auto;
+}
+#header h1.logo strong {
+    /* ! 플롯 거니까 된다..! */
+    float: left;
+    /* position: absolute;
+    top: 50%;
+    transform: translateY(-50%); */
+    /* ! 새로 */
+    display: inline-block;
+    font-size: 24px;
+    padding-left: 15px;
+}
+
+
+#header nav #toggle_btn {
+    position: absolute;
+    top: 50%; right: 40px;
+    transform: translateY(-50%);
+    display: block;
+    height: 30px;
+    width: 36px;
+    border: 0;
+    /* background-color: transparent; */
+    
+    cursor: pointer;
+    z-index: 99;
+    
+    background-color:#B5E3DF;
+    background-color: #888;
+    border-radius: 5px;
+    /* box-shadow: 0px 1px 5px rgba(0, 0, 0, .4); */
+}
+
+/* * HAMBURGER */
+.hamburger {
+    position: absolute;
+    /* top: 50%; */
+    right: 3px;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 30px;
+    background-color: #888;
+    background-color:#B5E3DF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    transition: .5s;
+    
+    pointer-events: none;
+}
+.hamburger:before,
+.hamburger:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: #888;
+    background-color:#B5E3DF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    transition: .5s;
+
+    pointer-events: none;
+}
+.hamburger:before {
+    top: -8px;
+    right: 0px;
+}
+.hamburger:after {
+    top: 8px;
+    right: 0px;
+}
+.hamburger.active {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+.hamburger.active::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+.hamburger.active::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* * //HAMBURGER */
+
+
+
+
+/* *메뉴가 보여지지 않을 때 */
+#header nav .lnb {
+    position: absolute;
+    display: block;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+
+    z-index: 99;
+    transition: 0.5s ease;
+    background-color: rgba(0, 0, 0, .5);
+    /* background-color: rgba(181, 226, 223); */
+    
+}
+#header nav .lnb.show { height: 200px }
+
+@media (min-width: 768px) {
+    #header h1.logo {
+        float: left;
+    }
+    #header nav #toggle_btn {
+        display: none;
+    }
+    #header nav .lnb {
+        /* position: static;  */
+        float: right;
+        display: block;
+        position: relative;   
+        top: 0;
+        /* width: auto, 100%; 로 하면 safari 에서 깨진다.. 해결책은 요소의 넓이를 주기! */
+        width: 500px;
+        text-align: right;
+
+        height: auto;
+        background-color: transparent;
+        transition: none;
+    }
+    #header nav .lnb.show {
+        height: auto;
+    }
+}
+
+
+#header nav .lnb li.nav_item {
+    float: none;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    
+    cursor: pointer;
+}
+#header nav .lnb li.nav_item a {
+    display: block;
+
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: .1em;
+    color: #fff;
+    padding-left: 50px;
+    font-size: 1.2em;
+}
+#header nav .lnb li.nav_item:hover {
+    background-color: rgba(0, 0, 0, .4);
+    background-color: rgba(181, 226, 223, 0.6)
+}
+/* 데스크탑 가로 해상도가 768px 보다 큰 화면에 적용 */
+@media (min-width: 768px) {
+    #header nav .lnb li.nav_item {
+        /* ! 목록의 왼쪽 정렬을 위해서 float을 선언하지 않는다. right를 하면 오른쪽 부터 정렬됨 */
+        /* float: right; */
+        display: inline-block;
+        height: 60px;
+        line-height: 60px;
+
+        padding: 0 20px;
+    }
+    #header nav .lnb li.nav_item:hover {
+        background-color: transparent;
+    }
+    #header nav .lnb li.nav_item a {
+        color: #222;
+        padding-left: 0px;
+        /* !내가 아래 2개 지움 */
+        display: inline-block;
+        /* padding: 0 20px; */
+    }
+
+}
+
+/* * //HEADER */
+
+
+
+

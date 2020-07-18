@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+#portfolio {
+    height: auto;
+    background-color: #fff;
+    padding: 100px 0;
+
+    color: #555;
+}
+#portfolio .title {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-bottom: 100px;
+
+    height: 80px;
+    line-height: 80px;
+}
+#portfolio .title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 8px;
+    margin: 0 auto;
+    background-image: linear-gradient(to right, #B5E2DF, rgb(142, 221, 216));
+}
+
+
+#portfolio .article .folioItem {
+    display: block;
+
+    width: calc(100% - 40px);
+    margin: 20px;
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    #portfolio .article .folioItem {
+        width: calc(50% - 60px);
+
+        display: inline-block;
+        /* box-sizing: border-box; */
+    }
+}
+
+#portfolio .article .folioItem.show {
+    display: inline-block;
+}
+
+
+
+#portfolio .article .folioItem .folioImage {
+    position: relative;
+    max-height: 700px;
+}
+@media (min-width: 992px) {
+    #portfolio .article .folioItem .folioImage {
+        max-height: 300px;
+    }
+}
+#portfolio .article .folioItem .folioImage .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0;
+    transition: all 300ms ease;
+    cursor: pointer;
+
+    border-radius: 8px;
+}
+#portfolio .article .folioItem .folioImage:hover .overlay {
+    background-image: linear-gradient(to right, #B5E2DF, rgb(142, 221, 216));
+    opacity: 0.6;
+}
+#portfolio .article .folioItem .folioImage:hover .overlay i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 48px;
+}
+#portfolio .article .folioItem .folioImage img {
+    border-radius: 8px;
+}
+#portfolio .article .folioItem .itemTitle {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 0;
+}
+#portfolio .article .folioItem .itemSub {
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+}
+#portfolio .article .folioItem .description {
+    display: none;
+}
+
+/* MODAL */
+#portfolioModal {
+
+    display: block;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* background-color: rgba(0, 0, 0, 0.9); */
+    text-align: center;
+    overflow: hidden;
+}
+#portfolioModal.hidden {
+    display: none;
+}
+
+#portfolioModal .modalOverlay {
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+}
+
+
+#portfolioModal .container {
+    width: calc(100% - 60px);
+    margin: 50px 30px;
+    height: auto;
+
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+}
+@media (min-width: 992px) {
+    #portfolioModal .container {
+        max-width: 1000px;
+        margin: 50px auto;
+    }
+
+}
+
+#portfolioModal .container img {
+    width: calc(100% - 60px);
+    padding: 30px;
+}
+
+@media (min-width: 992px) {
+    #portfolioModal .container img {
+        max-width: 700px;
+    }
+}
+
+#portfolioModal .container .close {
+    position: absolute;
+    right: 0px; top: -10px;
+
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: #B5E2DF;
+    font-size: 40px;
+    font-weight: bold;
+}
+#portfolioModal .container .close:hover,
+#portfolioModal .container .close:focus {
+    color: aquamarine;
+}
+
+#portfolioModal .container .modal_main {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #777;
+} 
+#portfolioModal .container .modal_sub {
+    font-size: 18px;
+    color: #777;
+    padding: 10px 0;
+    font-weight: 500;
+
+}
+#portfolioModal .container .modal_text {
+    font-size: 16px;
+    color: #777;
+    font-weight: 300;
+    padding: 10px 20px 30px;
+
+    /* durl my code */
+    text-align: left;
+}
+#portfolioModal .container .modal_text * {
+    color: #777;
+    font-weight: 300;
+    
+}
+
+
+
+
+
+/* //MODAL */

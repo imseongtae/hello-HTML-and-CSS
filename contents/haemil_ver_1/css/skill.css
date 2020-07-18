@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+#skill {
+    height: auto;
+    background-color: rgba(181, 226, 223, .2);
+    padding: 100px 0;
+}
+#skill .title {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-bottom: 50px;
+
+    height: 80px;
+    line-height: 80px;
+}
+#skill .title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 8px;
+    margin: 0 auto;
+    background-image: linear-gradient(to right, #B5E2DF, rgb(142, 221, 216));
+}
+
+/* .filter 가 있어야 가운데 정렬이 된다. */
+#skill .filter .skillList {
+    text-align: center;
+}
+
+
+#skill .filter .skillList .listItem {
+    display: block;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+@media (min-width: 360px) {
+    #skill .title {
+        padding-bottom: 100px;
+    }
+
+    #skill .filter .skillList .listItem {
+        display: inline-block;
+        padding: 0 20px;
+        
+    }
+}
+
+
+#skill .filter .skillList .listItem:hover,
+#skill .filter .skillList .listItem.active {
+    color: royalblue;
+}
+
+@media (min-width:360px) {
+    #skill .filter .skillList .listItem:nth-child(1):hover::after,
+    #skill .filter .skillList .listItem:nth-child(1).active::after {
+        position: absolute;
+        width: 28px; height: 3px;
+        content: '';
+        background-color: #B5E2DF;
+        display: block;
+        top: 20px; left: 20px;
+        
+    }
+
+    #skill .filter .skillList .listItem:nth-child(2):hover::after,
+    #skill .filter .skillList .listItem:nth-child(2).active::after {
+        position: absolute;
+        width: 45px; height: 3px;
+        content: '';
+        display: block;
+        background-color: #B5E2DF;
+        top: 20px; left: 20px;
+    }
+    #skill .filter .skillList .listItem:nth-child(3):hover::after,
+    #skill .filter .skillList .listItem:nth-child(3).active::after {
+        position: absolute;
+        width: 31px; height: 3px;
+        content: '';
+        display: block;
+        background-color: #B5E2DF;
+
+        top: 20px; left: 20px;
+    }
+    #skill .filter .skillList .listItem:nth-child(4):hover::after,
+    #skill .filter .skillList .listItem:nth-child(4).active::after {
+        position: absolute;
+        width: 80px; height: 3px;
+        content: '';
+        display: block;
+        background-color: #B5E2DF;
+
+        top: 20px; left: 20px;
+    }
+}
+
+
+#skill .article {
+    text-align: center;
+}
+#skill .article .skillItem {
+    height: auto;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    text-align: left;
+
+
+    width: calc(100% - 80px);
+
+    height: 300px;
+    /* max-height: 300px; */
+
+    transition: 0.5s ease;
+
+
+    display: none;
+
+    /* 여기서 부터 수정코드 */
+    table-layout: fixed;
+}
+#skill .article .skillItem.show {
+    display: table;
+}
+
+#skill .article .skillItem:hover {
+    /* transform: scale(1.01); */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* 
+#skill .article .skillItem .skillImage {
+    display: inline-block;
+    
+}
+#skill .article .skillItem .skillImage img {
+    width: 100%;
+    height: 100%;
+    
+}
+#skill .article .skillItem:nth-child(1) .skillImage  i {
+    font-size: 250px;
+    color: #FF5E00;
+}
+
+#skill .article .skillItem:nth-child(2) .skillImage  i {
+    font-size: 250px;
+    color: #0170BA;
+}
+#skill .article .skillItem:nth-child(3) .skillImage  i {
+    font-size: 250px;
+    color: #F8DC3D;
+} 
+*/
+
+ 
+#skill .article .skillImage {
+    display: table-row;
+
+    width: 250px;
+    height: auto;
+    margin: 0 auto;
+}
+#skill .article .skillImage img {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#skill .article .skillItem .skillDescription {
+    display: table-row;
+
+    overflow: visible;
+    text-align: left;
+    font-size: 16px;
+    color: #222;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    line-height: 1.1;
+
+}
+#skill .article .skillItem .skillDescription strong {
+    font-weight: 500;
+    color: #242424;
+    display: block; 
+}
+
+@media (min-width: 576px) {
+    #skill .article .skillItem.show {
+        display: block;
+    }
+
+    #skill .article .skillImage {
+        display: initial;
+        float: left; 
+        width: 33.3%;
+    }
+    #skill .article .skillItem .skillDescription {
+        display: initial;
+        float: left; 
+        width: calc(66.6% - 75px);
+        margin: 0 20px 0 55px;
+        box-sizing: border-box;
+        padding: 30px 0;
+    }
+}
+
+
