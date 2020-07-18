@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css">
+
+    <style>
+        .wrap {
+
+            width: 500px;
+            margin: 10px auto;
+            font-size: 13px;
+        }
+        /* IE6 버전을 맞추어야 한다면 클래스 이름을 선택자로 주어야 하지만! 이후 버전을 고려한다면 자식선택자를 써도 된다. */
+        /* .tab_list .m1 > a{ } */
+
+        .tab_list { 
+            position: relative;
+            /* height: 200px; */
+            padding-top: 36px;
+         }
+         
+
+        .tab_list .m1 > a,
+        .tab_list .m2 > a,
+        .tab_list .m3 > a {
+            display: block;
+            /* 플롯을 하면 크기가 잡히고 다른 내용들이 옆으로 간다. */
+            /* float: left; */
+            position: absolute;
+            left: 0; top: 0;
+            /* absolute 로 띄우기 위해선 가로폭을 만들어주어야 한다. */
+            width: 100px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            background-color: #FAFAFA;
+            border: 1px solid #CCC;
+            color: #666; font-size: 13px;
+            text-decoration: none;            
+        }
+        .tab_list .m2 > a {left: 101px;}
+        .tab_list .m3 > a {left: 202px;}
+
+
+        .tab_list .active > a {
+            background-color: #fff;
+            color: #222;
+            border-bottom-color: #fff;
+            font-weight: bold;
+            /* ul의 border-top과 겹치므로 앞으로 빼낸다. */
+            /* position: relative; */
+            z-index: 1;
+
+        }
+
+        
+        .tab_list .more{
+            display: none;
+            position: absolute; 
+            right: 0px; top: 5px;
+        }        
+        .tab_list .more a {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+            letter-spacing: -1px;
+        }
+
+
+        .tab_list .m1 .sub_menu, 
+        .tab_list .m2 .sub_menu, 
+        .tab_list .m3 .sub_menu {
+            display: none;
+            /* position: absolute; */
+            /* left: 0; 
+            top: 36px; */
+
+            width: 100%;
+            padding-top: 10px;
+            /* margin-top: 36px; */
+            border-top: 1px solid #aaa;
+
+            
+
+        }  
+        .tab_list .active .sub_menu { display: block; }
+        /* .tab_list .more.active { display: block; } */
+        .tab_list .active .more { display: block; }
+        /* overflow로 hidden으로도 float 해제를 할 수 있다. */
+        .tab_list .sub_menu li { 
+            *zoom: 1; 
+            border-bottom: 1px dashed #ddd; 
+            line-height: 1.5; 
+            margin-bottom: 5px; padding-bottom: 5px;
+        }
+        .tab_list .sub_menu li::after {content: ''; display: block; clear: both;}
+        .tab_list .sub_menu li a { float: left; color: #666; letter-spacing: -0.5px; }
+        .tab_list .sub_menu li span { 
+            float: right;
+            color: #666; font-family: Verdana, sans-serif; font-size: 11px;             
+        }
+
+
+
+        .clear {content: ''; display: block; clear: both;}
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <!-- tab_list -->
+        <div class="tab_list clear">
+        <ul>
+            <li class="m1">
+                <a href="#" class="list_title">공지사항</a>
+                <ul class="sub_menu">
+                    <li><a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a> <span>2019-10-10</span></li>
+                    <li><a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a> <span>2019-10-09</span></li>
+                    <li><a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a> <span>2019-10-08</span></li>
+                </ul>
+                <p class="more"><a href="#">공지사항 더보기</a></p>
+            </li>
+            <li class="m2">
+                <a href="#" class="list_title">보도자료</a>
+                <ul class="sub_menu">
+                    <li><a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a> <span>2019-09-10</span></li>
+                    <li><a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a> <span>2019-09-09</span></li>
+                    <li><a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a> <span>2019-09-08</span></li>
+                    <li><a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a> <span>2019-09-02</span></li>
+                </ul>
+                <p class="more"><a href="#">보도자료 더보기</a></p>
+            </li>
+            <li class="m3">
+                <a href="#" class="list_title">해명자료</a>
+                <ul class="sub_menu">
+                    <li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a> <span>2019-08-30</span></li>
+                    <li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a> <span>2019-08-28</span></li>
+                    <li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a> <span>2019-08-25</span></li>
+                    <li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a> <span>2019-08-21</span></li>
+                    <li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a> <span>2019-08-10</span></li>
+                </ul>
+                <p class="more"><a href="#">해명자료 더보기</a></p>
+
+            </li>
+        </ul>
+        </div>
+        <!-- //tab_list -->
+
+    </div>
+
+    <h2>높이를 인식하도록 list ul을 수정한다. </h2>
+    <p>
+        페이지 본문에 들어가는 용도
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error ex iste, dicta voluptas accusantium voluptate. Dignissimos provident asperiores molestiae fugiat aliquam quo inventore explicabo exercitationem. Doloribus esse reiciendis reprehenderit eaque?
+    </p>
+    <hr>
+    <ol>
+        <li>불릿을 만든다.</li>
+        <li>코드를 정리한다.</li>
+        <li>push!! </li>
+
+    </ol>
+
+    <!-- <div id="div-01">Here is div-01</div> -->
+    <!-- <div class="div-02">Here is div-02</div> -->
+
+    <script>
+        // var el = document.getElementById('div-01')
+
+        // console.log(el.nodeName)
+        // console.log(el.id)
+        // console.log(el.nextSibling.nodeName)
+        // console.log(el.nextSibling.nextSibling.className)
+        // console.log(el.nextSibling.nextSibling.nextSibling)
+        // console.log(el.nextSibling.nextSibling.nextSibling.nextSibling)
+
+    </script>
+
+
+
+
+
+    <!-- <pre>
+    탭메뉴의 내용을 
+    absolute로 설정해 내용을 덮거나
+    relative로 설정해 밀려내려가도록 할 수 있다. 
+     
+    버튼을 만드는 상위 요소에 float, position 을 하는 게 더 안정적이다. 
+
+    서브메뉴만 앱솔루트 처리하면 정상적으로 적용이 된다. 
+
+    </pre> -->
+
+    <script src="./tabmenu.js"></script>
+
+</body>
+
+</html>

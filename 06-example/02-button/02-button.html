@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>button</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        .area {
+            margin: 30px;
+        }
+
+        .btn_pack {
+            display: inline-block;
+            background: url(./btn_pack.gif) no-repeat 0 0;
+
+            margin-right: 50px;
+        }
+
+        .btn_pack a,
+        .btn_pack button,
+        .btn_pack input {
+            position: relative;
+            right: -4px;
+            display: inline-block;
+            height: 24px;
+            /* input이나 버튼은 기본적으로 버튼 형태가 있으므로 없애야 한다 */
+            border: 0;
+            padding: 0;
+            padding-left: 6px;
+            padding-right: 6px;
+
+            /* 오른쪽 테두리를 넣기 위해서 => 오른쪽 끝 위로 위치설정 */
+            background: url(./btn_pack.gif) no-repeat 100% 0;
+
+
+            color: #666;
+            text-decoration: none;
+            line-height: 24px;
+            cursor: pointer;
+
+        }
+
+        .btn_pack a:hover,
+        .btn_pack button:hover,
+        .btn_pack input:hover {
+            color: #000;
+            /* font-weight: bold; */
+        }
+
+        .btn_pack.large 
+        {
+            background-position: 0 -30px;
+            
+        }
+        .btn_pack.large a,
+        .btn_pack.large button,
+        .btn_pack.large input {
+            height: 30px;
+            line-height: 30px;
+            background-position: 100% -30px;
+
+            font-size: 14px;
+
+        }
+        .btn_pack.ico {
+            position: relative;
+        }
+        .btn_pack.ico .plus
+        {
+            position: absolute;
+            left: 8px;
+            top: 50%; 
+            margin-top: -5px;
+
+
+            /* 아이콘은 주로 블록을 쓰므로 inline-block이나 block이나 상관이 없다 */
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: url(./btn_pack.gif) no-repeat -20px -157px;
+        }
+
+        .btn_pack.ico a,
+        .btn_pack.ico button,
+        .btn_pack.ico input 
+        {
+            padding-left: 16px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="area">
+        <span class="btn_pack ico">
+            <span class="plus"></span>
+            <a href="#">anchor</a>
+        </span>
+
+        <span class="btn_pack ico">
+            <span class="plus"></span>
+            <button>button</button>
+        </span>
+
+        <span class="btn_pack ico">
+            <span class="plus"></span>
+            <input type="button" value="input">
+        </span>
+        <hr>
+
+        <span class="btn_pack large">
+            <a href="#">anchor</a>
+        </span>
+
+        <span class="btn_pack large">
+            <button>button</button>
+        </span>
+
+        <span class="btn_pack large">
+            <input type="button" value="input">
+        </span>
+    </div>
+
+    <button>button</button>
+
+
+</body>
+
+</html>

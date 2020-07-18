@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Teaching</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    /* Common */
+    body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+    body,input,textarea,select,button,table{font-family:'Malgun Ghothic',Dotum,sans-serif;font-size:12px}
+    img,fieldset{border:0}
+    ul,ol{list-style:none}
+    em,address{font-style:normal}
+    a{text-decoration:none}
+    a:hover,a:active,a:focus{text-decoration:underline}
+
+    /* legend는 화면에 표현하지 않는다. */
+    legend, .blind {display: block; position: absolute;left:0; top:-9999em;overflow: hidden;}
+
+    /* style */
+    #content {width: 980px; margin: 0 auto;}
+    .bg {display: none; background-color: rgba(0, 0, 0, .5); position: fixed; left: 0; right: 0;top: 0; bottom: 0;}
+    .login {display: none; position: absolute;top: 50%;left: 50%; margin-left: -192px; margin-top: -95px; width: 384px;border: 2px solid #555; z-index: 10; background-color: #fff;}
+    .login form {}
+    .login form legend {}
+
+    .login form fieldset {padding: 28px 28px 10px;}
+
+    .login fieldset .field {margin-bottom: 5px;}
+    .login fieldset .field .inp_field {
+      border: 1px solid #b7b7b7;
+      border-color: #b7b7b7 #e1e1e1 #e1e1e1 #b7b7b7;
+      /* 브라우저 호환을 위해서는 하이트랑 라인하이트 둘다 있어야 한다. */
+      width: 326px; height: 28px; 
+      text-indent: 9px;          
+      color: #767676; 
+
+      font: 600 11px/28px verdana,sans-serif;  
+      /* 
+      font-weight: bold;
+      font-size: 11px; 
+      line-height: 28px;
+      font-family: Verdana,tahoma,sans-serif;
+      */
+    }
+
+
+
+ 
+
+    .login fieldset .login_area {*zoom: 1; padding-top: 5px;}
+    .login fieldset .login_area:after {content: ''; display: block; clear: both;}
+
+    .login fieldset .check_field {
+      float: left;
+      margin-top: 7px;
+      color: #767676; 
+      /* font-family: Dotum,'돋음', sans-serif; */
+      font: 11px '돋움',dotum,helvetica,sans-serif;      
+    }
+    .login fieldset .check_field input {vertical-align: middle;}
+
+    .login fieldset .btn_area {
+      float: right;
+      margin-right: 3px;
+    }
+    .login fieldset .btn_area .btn_submit {
+      background: none;
+      border: 0 none;
+      cursor: pointer;
+      padding-left: 40px;
+
+      /* overflow visible 처리를 해주어야 한다!! */
+      overflow: visible;
+
+      background: url(./img/btn_login.gif) no-repeat 0 0;
+      
+    }
+    .login fieldset .btn_area .btn_submit span{
+      display: block;
+
+      position: relative;
+      right: -3px; 
+
+      height: 32px;
+      /* line-height: 32px; */
+      
+      color: #fff;
+      font: bold 12px/32px '돋움',dotum;
+
+      padding-right: 20px;
+      background: url(./img/btn_login.gif) no-repeat 100% 0;
+      /* background: url(./img/btn_login.gif) no-repeat -543px 0; */
+
+           
+    }
+
+    .login .nav {background-color: #fafafa; border-top:1px solid #d9d9d9; padding: 14px 0;text-align: center;}
+    .login .nav ul {}
+    .login .nav li {display: inline; border-right: 1px solid #c3c3c3;padding-right: 10px;margin-right: 5px;}
+    .login .nav li:last-child {border-right: 0; padding-right: 0px;margin-right: 0px;}
+    .login .nav li a {color: #767676;}
+
+
+    .login .btn_close {
+      position: absolute;
+      top: 0px; right: 0px;
+    }
+    .login .btn_close button{
+      /* width: 100%; height: 100%; */
+      width: 26px; height: 26px;
+      background: none;
+      border: 0 none;
+      color: #cacaca;
+      font: bold 12px/26px verdana, tahoma;
+      /* font-size: 12px;  */
+      /* font-weight: bold; */
+      /* font-family: verdana, tahoma; */
+      cursor: pointer;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<!-- content   -->
+<div id="content">
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum cum autem ea, voluptatem enim expedita unde numquam laboriosam debitis explicabo exercitationem minus consectetur sapiente ut suscipit vero sunt laborum aut?  
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil mollitia dolor iste officia aperiam, illum saepe voluptates magni quae, odio culpa voluptatum in sunt incidunt eaque fugit. Quod, facilis praesentium! 
+  <hr>
+  <p><button class="btn_login">로그인</button></p>
+  끝난 게 아니라 널리의 스크립트 내용
+  바닐라 스크립트로 구현하기~!!
+  
+  <div class="login">
+    <form action="#" method="post">
+      <!-- 필드셋이 필수는 아니지만 그룹으로 묶는다. -->
+      <fieldset>
+        <legend>로그인</legend>
+        <p class="field">
+          <label for="user_id" class="blind">ID</label>
+          <input type="text" id="user_id" name="user_id" value="" placeholder="ID : 전송되는 값 value를 항상 신경쓰자" class="inp_field">          
+        </p>
+        <p class="field">
+          <label for="user_pw" class="blind">PASSWORD</label>
+          <input type="password" id="user_pw" name="user_pw" value="" placeholder="PASSWORD" class="inp_field">          
+        </p>
+
+        <!-- IE 낮은 버전에서는 한쪽만 float을 하면 줄이 내려간다..!! 안전하게 하기 위해! -->
+        <div class="login_area">
+          <p class="check_field">
+            <input type="checkbox" id="keep_login" name="keep_login" value="">
+            <label for="keep_login">로그인 유지</label>
+          </p>
+          <p class="btn_area">
+            <button type="submit" class="btn_submit">
+              <span>로그인</span>
+            </button>
+          </p>
+        </div>
+
+      </fieldset>
+      <div class="nav">
+        <ul>
+          <li><a href="#">아이디/비밀번호 찾기</a></li>
+          <li><a href="#">회원가입</a></li>
+          <li><a href="#">Open ID</a></li>
+        </ul>
+      </div>
+    </form>
+    <p class="btn_close"><button type="button">x</button></p>
+  </div>
+  
+  <div class="bg"></div>
+
+
+</div>
+<!-- //content   -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    
+    $(function(){
+
+      // 선택을 해서 특정 명령을 내리는 구도이다. 
+      $('.btn_login').click(function(){
+        $('.bg, .login').show();
+        // $('.login').show();
+      })    
+      $('.btn_close button').click(function(){
+        $('.bg, .login').hide();
+      })
+      $('.bg').click(function(){
+        $('.bg, .login').hide();
+      })
+    
+    })
+    
+  
+  </script>
+
+</body>
+</html>

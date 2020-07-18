@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Button Package</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        .button_package_container {
+            width: 750px;
+            margin: 100px auto;
+        }
+
+        table {
+            width: 100%;
+            border: 2px solid #444;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            border: 2px solid #222;
+        }
+
+        table th {
+            font-weight: bold;
+            color: #666;
+        }
+
+        .container_title {
+            font-weight: bold;
+            font-size: 24px;
+            padding-bottom: 5px;
+            border-bottom: 1.5px solid #666;
+        }
+
+        .button_title {
+            font-weight: bold;
+            font-size: 16px;
+            margin: 5px 0;
+            text-align: left;
+        }
+        
+        .btn_pack,
+        .btn_pack * {
+            position: relative;
+            background: url(./btn_pack.gif) no-repeat;
+            display: inline-block;
+            overflow: visible;
+            border: 0;
+            padding: 0;
+            text-decoration: none;
+            font-family: sans-serif;
+            color: #333;
+            /* vertical-align: 속성을 설정하지 않으면 이미지의 간격이 생긴다. */
+            vertical-align: middle;
+            /* vertical-align: bottom; */
+            white-space:nowrap;
+        }
+        .btn_pack {margin-right: 4px; cursor: pointer; }
+        .btn_pack * {left: 4px;}
+
+        .btn_pack.small {
+            background-position: 0 -106px;            
+        }
+
+        .btn_pack.small * {
+            height: 19px;
+            line-height: 19px;
+            /* background: url(./btn_pack.gif) no-repeat 100% -106px; */
+            background-position: 100% -106px;
+            padding: 0 6px 0 2px;
+            font-size: 11px;
+        }
+
+        .btn_pack.medium {
+            background-position: 0 0;
+        }
+
+        .btn_pack.medium * {
+            height: 24px;
+            line-height: 24px;
+            /* background: url(./btn_pack.gif) no-repeat 100% 0; */
+            background-position: right top;
+            padding: 0 10px 0 6px;
+            font-size: 12px;
+        }
+
+        .btn_pack.large {
+            background-position: 0 -30px;
+        }
+
+        .btn_pack.large * {
+            height: 30px;
+            line-height: 30px;
+            background: url(./btn_pack.gif) no-repeat 100% -30px;
+            background-position: 100% -30px;
+            padding: 0 10px 0 6px;
+            font-size: 16px;
+        }
+
+        .btn_pack.ico * {padding-left: 20px;}
+        /* vertical-align을 주지 않았을 때, margin-bottom: -5px; 을 주면 똑같아진다. */
+        .btn_pack.ico span {width: 20px; margin-right: -20px; padding: 0 !important}
+        .btn_pack.ico.small * {padding-left: 16px; }
+        .btn_pack.small .check {background-position: 3px -153px;}
+        .btn_pack.medium .check {background-position: 4px -150px;}
+        .btn_pack.large .check {background-position: 4px -146px;}
+        /* Add */
+        .btn_pack.small .add {background-position: -18px -153px;}
+        .btn_pack.medium .add {background-position: -15px -150px;}
+        .btn_pack.large .add {background-position: -14px -146px;}
+
+        /* Add */
+        .btn_pack.small .delete {background-position: -37px -153px;}
+        .btn_pack.medium .delete {background-position: -34px -150px;}
+        .btn_pack.large .delete {background-position: -34px -146px;}
+
+        dt {
+            margin: 3px 0;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        dd {
+            padding-left: 10px;
+            font-size: 15px;
+        }
+        dd::before {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            display: inline-block;
+            content: '';
+            background: url(./btn_pack.gif) no-repeat 3px -153px;
+        }
+        
+        .btn_css3,
+        .btn_css3 *
+        {
+            padding: 0;
+            text-decoration: none;
+            overflow: visible;
+            font-family: sans-serif;
+            color: #333;
+        }
+        .btn_css3 * {
+            background-color: #F7F7F7;                       
+            border: 1px solid #AEAEAE;
+            border-radius: 3px;
+        }
+
+        .btn_css3.small * {
+            height: 19px;
+            line-height: 19px;     
+            font-size: 11px;
+            padding: 0 6px;
+        }
+        .btn_css3.medium * {
+            height: 24px;
+            line-height: 24px;     
+            font-size: 12px;
+            padding: 0 8px;
+        }
+        .btn_css3.large * {
+            height: 30px;
+            line-height: 30px;     
+            font-size: 16px;
+            padding: 0 10px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- button_package_container -->
+    <section class="button_package_container">
+        <h2 class="container_title">Button Package</h2>
+
+        <dl>
+            <dt>CSS1, CSS2 를 활용한 버튼</dt>
+            <dd>Regular Round Button</dd>
+            <dd>Check Icon Button</dd>
+            <dd>Add Icon Button</dd>
+            <dd>Delete Icon Button</dd>
+            <dt>CSS3를 활용한 버튼</dt>
+            <dd>Regular Round Button</dd>
+        </dl>
+
+        <!-- Regular Round Button -->
+        <table>
+            <caption class="button_title">Regular Round Button</caption>
+            <colgroup>
+                <col style="width: 100px;">
+                <col style="width: 200px;">
+                <col style="width: 200px;">
+                <col style="width: 250px;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>small</th>
+                    <th>medium</th>
+                    <th>large</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th scope="row">a</th>
+                    <td>
+                        <span class="btn_pack small">
+                            <a href="#">anchor</a>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack medium">
+                            <a href="#">anchor</a>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack large">
+                            <a href="#">anchor</a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">button</th>
+                    <td>
+                        <span class="btn_pack small">
+                            <button>button</button>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack medium">
+                            <button>button</button>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack large">
+                            <button>button</button>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">input</th>
+                    <td>
+                        <span class="btn_pack small">
+                            <input type="button" value="input">
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack medium">
+                            <input type="button" value="input">
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack large">
+                            <input type="button" value="input">
+                        </span>
+                    </td>
+                </tr>
+
+
+            </tbody>
+
+        </table>
+        <!-- //Regular Round Button -->
+
+        <hr>
+        <!-- Check Icon Button -->
+        <table>
+            <caption class="button_title">Check Icon Button</caption>
+            <colgroup>
+                <col style="width: 100px;">
+                <col style="width: 200px;">
+                <col style="width: 200px;">
+                <col style="width: 250px;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>small</th>
+                    <th>medium</th>
+                    <th>large</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th scope="row">a</th>
+                    <td>
+                        <span class="btn_pack ico small">
+                            <span class="check"></span><a href="#">anchor</a>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack ico medium">
+                            <span class="check"></span>
+                            <a href="#">anchor</a>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack ico large">
+                            <span class="check"></span>
+
+                            <a href="#">anchor</a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">button</th>
+                    <td>
+                        <span class="btn_pack ico small">
+                            <span class="check"></span>
+
+                            <button>button</button>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack medium">
+                            <span class="check"></span>
+
+                            <button>button</button>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack large">
+                            <span class="check"></span>
+
+                            <button>button</button>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">input</th>
+                    <td>
+                        <span class="btn_pack ico small">
+                            <span class="check"></span>
+
+                            <input type="button" value="input">
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack medium">
+                            <span class="check"></span>
+                            <input type="button" value="input">
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack large">
+                            <span class="check"></span>
+                            <input type="button" value="input">
+                        </span>
+                    </td>
+                </tr>
+
+
+            </tbody>
+
+        </table>
+        <!-- //Check Icon Button -->
+
+        <hr>
+        <!-- Add Icon Button -->
+        <table>
+            <caption class="button_title">Add Icon Button</caption>
+            <colgroup>
+                <col style="width: 100px;">
+                <col style="width: 200px;">
+                <col style="width: 200px;">
+                <col style="width: 250px;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>small</th>
+                    <th>medium</th>
+                    <th>large</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th scope="row">a</th>
+                    <td>
+                        <span class="btn_pack ico small">
+                            <span class="add"></span><a href="#">anchor</a>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack ico medium">
+                            <span class="add"></span>
+                            <a href="#">anchor</a>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack ico large">
+                            <span class="add"></span>
+
+                            <a href="#">anchor</a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">button</th>
+                    <td>
+                        <span class="btn_pack ico small">
+                            <span class="add"></span>
+
+                            <button>button</button>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack medium">
+                            <span class="add"></span>
+
+                            <button>button</button>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack large">
+                            <span class="add"></span>
+
+                            <button>button</button>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">input</th>
+                    <td>
+                        <span class="btn_pack ico small">
+                            <span class="add"></span>
+
+                            <input type="button" value="input">
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack medium">
+                            <span class="add"></span>
+                            <input type="button" value="input">
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn_pack large">
+                            <span class="add"></span>
+                            <input type="button" value="input">
+                        </span>
+                    </td>
+                </tr>
+
+
+            </tbody>
+
+        </table>
+        <!-- //Add Icon Button -->
+
+        <hr>
+        <!-- Delete Icon Button -->
+        <table>
+                <caption class="button_title">Delete Icon Button</caption>
+                <colgroup>
+                    <col style="width: 100px;">
+                    <col style="width: 200px;">
+                    <col style="width: 200px;">
+                    <col style="width: 250px;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Element</th>
+                        <th>small</th>
+                        <th>medium</th>
+                        <th>large</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr>
+                        <th scope="row">a</th>
+                        <td>
+                            <span class="btn_pack ico small">
+                                <span class="delete"></span><a href="#">anchor</a>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="btn_pack ico medium">
+                                <span class="delete"></span>
+                                <a href="#">anchor</a>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="btn_pack ico large">
+                                <span class="delete"></span>
+    
+                                <a href="#">anchor</a>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">button</th>
+                        <td>
+                            <span class="btn_pack ico small">
+                                <span class="delete"></span>
+    
+                                <button>button</button>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="btn_pack medium">
+                                <span class="delete"></span>
+    
+                                <button>button</button>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="btn_pack large">
+                                <span class="delete"></span>
+    
+                                <button>button</button>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">input</th>
+                        <td>
+                            <span class="btn_pack ico small">
+                                <span class="delete"></span>
+    
+                                <input type="button" value="input">
+                            </span>
+                        </td>
+                        <td>
+                            <span class="btn_pack medium">
+                                <span class="delete"></span>
+                                <input type="button" value="input">
+                            </span>
+                        </td>
+                        <td>
+                            <span class="btn_pack large">
+                                <span class="delete"></span>
+                                <input type="button" value="input">
+                            </span>
+                        </td>
+                    </tr>
+    
+    
+                </tbody>
+    
+        </table>
+        <!-- //Delete Icon Button -->
+
+        <hr>
+        <!-- CSS3 Regular Round Button -->
+        <table>
+                <caption class="button_title">CSS3 Regular Round Button</caption>
+                <colgroup>
+                    <col style="width: 100px;">
+                    <col style="width: 200px;">
+                    <col style="width: 200px;">
+                    <col style="width: 250px;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Element</th>
+                        <th>small</th>
+                        <th>medium</th>
+                        <th>large</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr>
+                        <th scope="row">a</th>
+                        <td>
+                            <span class="btn_css3 small">
+                                <a href="#">anchor</a>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="btn_css3 medium">
+                                <a href="#">anchor</a>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="btn_css3 large">
+                                <a href="#">anchor</a>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">button</th>
+                        <td>
+                            <span class="btn_css3 small">
+                                <button>button</button>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="btn_css3 medium">
+                                <button>button</button>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="btn_css3 large">
+                                <button>button</button>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">input</th>
+                        <td>
+                            <span class="btn_css3 small">
+                                <input type="button" value="input">
+                            </span>
+                        </td>
+                        <td>
+                            <span class="btn_css3 medium">
+                                <input type="button" value="input">
+                            </span>
+                        </td>
+                        <td>
+                            <span class="btn_css3 large">
+                                <input type="button" value="input">
+                            </span>
+                        </td>
+                    </tr>
+    
+    
+                </tbody>               
+    
+        </table>
+        <!-- CSS3 Regular Round Button -->
+
+
+
+    </section>
+    <!-- //button_package_container -->
+
+
+
+</body>
+
+</html>
