@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Font-face & Webfont</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Cute+Font|Satisfy&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,400,700,900&display=swap&subset=korean');
+        /* 위의 노토산스는 100, 400, 700, 900만 사용가능 */
+
+        /* 아래는 다 쓸 수 있는 것 */
+        /* @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css'); */
+   
+        /* 외부 css 파일에 추가하는 경우가 많으므로 import 형식으로 연결하는 것을 권장한다. */
+        
+        @font-face {
+            font-family: NGothic;
+            src: url(fonts/NanumGothic.eot);
+            src: url(fonts/NanumGothic.eot?#iefix) format('embedded-opentype'),
+                 url(fonts/NanumGothic.woff) format('woff'),
+                 url(fonts/NanumGothic.ttf) format('truetype')
+        }
+        body{
+            font-size: 20px;
+        }
+        h1{
+            font-family: 'Cute Font', cursive;
+        }
+        .nanum {
+            font-family: NGothic, sans-serif;
+        }
+        /*  font-family: 'Cute Font', cursive;
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Satisfy', cursive; */
+        .lead {
+            font-family: 'Cute Font', cursive;
+            font-size: 2em;
+        }
+        .lead1 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 1.5em;
+        }
+        .lead2 {
+            font-family: 'Satisfy', cursive;
+            font-size: 1.5em;
+        }
+        .noto1 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 100;
+        }
+        .noto2 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 200;
+        }
+        .noto3 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 300;
+        }
+        .noto4 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+        }
+        .noto5 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+        }
+        .noto6 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+
+<h1>@font-face | 구글웹폰트적용</h1>
+<p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, quod!</p>
+<p class="lead1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, quod!</p>
+<p class="lead2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, quod!</p>
+<p class="nanum">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, quod!</p>
+<hr>
+<h2>Early Access - Google Fonts</h2>
+<p class="noto1">다음의 서체 링크에서 http: 프로토콜을 입력해야 정상적으로 활용 가능.</p>
+<p class="noto2">다음의 서체 링크에서 http: 프로토콜을 입력해야 정상적으로 활용 가능.</p>
+<p class="noto3">다음의 서체 링크에서 http: 프로토콜을 입력해야 정상적으로 활용 가능.</p>
+<p class="noto4">다음의 서체 링크에서 http: 프로토콜을 입력해야 정상적으로 활용 가능.</p>
+<p class="noto5">다음의 서체 링크에서 http: 프로토콜을 입력해야 정상적으로 활용 가능.</p>
+<p class="noto6">다음의 서체 링크에서 http: 프로토콜을 입력해야 정상적으로 활용 가능.</p>
+
+</body>
+</html>

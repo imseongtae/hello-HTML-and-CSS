@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Font</title>
+    <style>
+        body, h1, h2{
+            /* font-family: '돋음', dotum, Helvetica, sans-serif; */
+            font-family: 'Malgun Gothic', Helvetica, sans-serif;
+            font-size: 12px;
+            /* 보통 바디에는 12px을 준다! */
+        }
+        h1{
+            font-size: 2.4em;
+            background: green;
+            text-transform: capitalize;
+        }
+        h1 small{
+            background-color: gold;
+            font-size: .5em;
+            vertical-align: middle;
+            /* baseline | top | middle | bottom */
+        }
+        h2{
+            font-size: 2em;
+            font-variant: small-caps;
+            /* 소문자로 쓴 자리의 글자가 대문자로 변환된다. */
+        }
+        address{
+            font-style: normal;
+        }
+
+        .text{
+            white-space: nowrap;
+            /* 영역으로 감싸지 않는다. */
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <h1>style example <small>sample</small></h1>
+        <h2>Style Example (font variant)</h2>
+        <p class="lead">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, aut.
+        </p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus non sint illum nam excepturi sequi velit aperiam porro voluptatum quo laudantium commodi dolor odit repudiandae saepe, soluta eum rerum consequuntur.</p>
+        <hr>
+        <address>add: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, delectus.</address>
+    </div>
+
+    <pre>
+        serif 명조 약간 휘어진 장식
+        sans-serif 고딕
+        cursive 필기체 형태
+        monosapce 고정폭 형태, 프로그래밍 코드를 보여줄 때 고정폭이 필요..!
+
+    </pre>
+
+    <p class="text">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et odit earum minus, ducimus corrupti rerum soluta officia magni animi. Eveniet eligendi voluptate et magni at tempore amet temporibus quam officia? Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ratione totam assumenda libero quasi, similique earum quis corporis reprehenderit blanditiis, aperiam veritatis. Doloribus minus eius ratione veniam eaque velit adipisci?
+    </p>
+</body>
+</html>

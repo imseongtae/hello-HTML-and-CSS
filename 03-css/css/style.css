@@ -1,0 +1,7 @@
+@charset "utf-8";
+/* 주석처리를 주의하기 위해서 charset을 작성해야 한다. */
+
+
+p{
+    background: gold;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clear</title>
+    <style>
+        img {
+            vertical-align: top;
+        }
+        .area {
+            margin: 0 auto;
+            width: 600px;
+            border: 4px dotted lime;
+            *zoom: 1; 
+            /* IE6, IE7 Hack | 별줌:1을 하면 IE에서만 가능한 Hack code가 된다. 콜론 에프터를 인지할 수 없는 브라우저 때문에 스타 줌을 사용한다. */
+        }
+        .area .thum {
+            float: left;
+            border: 2px solid black;
+        }
+        .area:after {
+            content: '';
+            display: block;
+            clear: both;
+            /* 이렇게 쓰는 건 거의 공식처럼 사용하므로 익혀둔다 */
+        }
+        /* p {
+            clear: both;
+            IE8이... 맞지 않는다...
+        } */
+        .area1 {
+            overflow: hidden;
+            width: 600px;
+            height: 130px;
+            margin: 0 auto;
+            border: 4px dotted lime;
+        }
+        .area1 .thum{
+            float: left;
+            border: 2px solid red;
+        }
+        p::first-line {
+            background-color: lime;
+        }
+    </style>
+</head>
+<body>
+    <h1>플롯 해지하는 중요한 방법 1가지, 가상요소 :after</h1>
+    <div class="area">
+        <div class="thum"><img src="http://placehold.it/100x120?text=1" alt=""></div>
+        <div class="thum"><img src="http://placehold.it/100x120?text=2" alt=""></div>
+        <div class="thum"><img src="http://placehold.it/100x120?text=3" alt=""></div>
+        <div class="thum"><img src="http://placehold.it/100x120?text=4" alt=""></div>
+        <div class="thum"><img src="http://placehold.it/100x120?text=5" alt=""></div>
+        
+        <!-- 클리어 위치 -->
+    </div>
+    <p>*zoom: 1;은 IE6, IE7 Hack | 별줌:1을 하면 IE에서만 가능한 Hack code가 된다. 콜론 에프터를 인지할 수 없는 브라우저 때문에 스타 줌을 사용한다. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem sequi perferendis eius earum dolor nulla sapiente obcaecati saepe hic, atque a molestiae. Magni non voluptates quidem illum temporibus in modi accusantium nostrum aspernatur, voluptatibus aliquam ullam nisi autem labore inventore architecto mollitia numquam? Ut, atque esse ad, distinctio asperiores maxime porro illo, eaque sapiente minus deserunt! Illo velit obcaecati aspernatur harum tempore quo vel blanditiis quibusdam ad, earum consectetur placeat sint est nobis sed alias accusantium delectus molestiae distinctio minus ex ducimus officia. Repellendus totam minus hic, perspiciatis nihil similique nobis suscipit magni delectus, quam, eius quidem! Molestiae, ad vero.</p>
+    <hr>
+    <h2>플롯 해지하는 두 번째 방법, overflow: hidden</h2>
+    <div class="area1">
+            <div class="thum"><img src="http://placehold.it/100x120?text=1" alt=""></div>
+            <div class="thum"><img src="http://placehold.it/100x120?text=2" alt=""></div>
+            <div class="thum"><img src="http://placehold.it/100x120?text=3" alt=""></div>
+            <div class="thum"><img src="http://placehold.it/100x120?text=4" alt=""></div>
+            <div class="thum"><img src="http://placehold.it/100x120?text=5" alt=""></div>
+            <div class="thum"><img src="http://placehold.it/100x120?text=6" alt=""></div>
+            <div class="thum"><img src="http://placehold.it/100x120?text=7" alt=""></div>
+            <!-- 클리어 위치 -->
+    </div>
+    <p>
+        overflow: hidden; 을 적용하면 플롯 요소들을 감쌀 수 있다. 그렇지만 요소 밖을 벗어나는 일이 생긴다면
+        속성 hidden에 의해서 숨겨질 수 있으므로 사용에 주의를 해야 한다. 
+        *같은효과는 낼 수 있지만 주의한다. 이미지 요소들을 감싸는 area 의 height 값이 130px; 이므로 6, 7번째 이미지가 현재 hidden에 의해 숨겨져 있는 것일까? 
+
+    </p>
+</body>
+</html>

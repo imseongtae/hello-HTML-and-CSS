@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-CSS Basic</title>
+    <style>
+        body{
+            background: url(img/bg.jpg);
+            background-repeat: no-repeat;
+        }
+        h1{
+            
+            /* color: rgba(255, 0, 0, .4); */
+            color: hsla(0, 100%, 50%, .4);
+            font-size: 5em;
+        }
+        p{  
+            width: 400px;
+            background: gold;
+        }
+        div{
+            width: 32em;
+            /* 폰트의 높이를 1로 하는 단위 */
+            background-color: lime;
+            /* font-size: 15px; */
+        }
+        .p1{
+            width: 40%;
+            background-color: orange;
+        }
+        .rem{
+            width: 32rem;
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>css basic</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis molestias, est fugit cupiditate consequuntur obcaecati accusamus tempore quibusdam officia et officiis fugiat mollitia repudiandae minima voluptatem cum odit quisquam necessitatibus!</p>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis molestias, est fugit cupiditate consequuntur obcaecati accusamus tempore quibusdam officia et officiis fugiat mollitia repudiandae minima voluptatem cum odit quisquam necessitatibus!</div>
+    <p class="p1">감싸는 태그의 비율 만큼 영역을 차지한다. 이때에 퍼센트를 사용한다 Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis molestias, est fugit cupiditate consequuntur obcaecati accusamus tempore quibusdam officia et officiis fugiat mollitia repudiandae minima voluptatem cum odit quisquam necessitatibus!</p>
+
+    <p class="rem">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor ea deleniti modi repellat ab minima eaque, omnis consequatur architecto est illum eveniet voluptatum laboriosam culpa dolorum aliquam nesciunt reprehenderit cupiditate?</p>
+
+    <pre>
+        색상이름으로 지정 - color: red;
+        Hex코드로 지정 - color: #ff0000;
+        Hex코드가 #rrggbb 에서 짝이 모두 맞으면 한글자씩 생략 가능 - color: #f00;
+        RGB(red,green,blue) 로 지정, 255가 최대치 - color: rgb(255,0,0);
+        RGB(red,green,blue) 의 비율로 지정 - color: rgb(100%,0%,0%);
+        HSL(Hue,Saturation,Lightness) 로 지정. - color: hsl(0,100%,50%);
+        RGBA(red,green,blue,Alpha) 로 지정, alpha는 0 ~ 1의 값 지정, 0은 투명 1은 불투명- color: rgba(255,0,0,.5);
+        HSLA(Hue,Saturation,Lightness,Alpha) 로 지정. - color: hsla(0,100%,50%,.5);
+
+    </pre>
+
+    px - 제일 많이 씀
+    em - 
+    % - 비율
+    rem -> root(= html을 글자 단위)를 기준으로 em을 계산한다. rem은 모바일 페이지를 만들 떄 사용하면 좋다. 왜냐하면 크로스 브라우징을 맞추는 것을 고려한다면 사용할 수 있는 요소는 아니다. 
+    <mark> HTML5 이후의 요소들은 크로스 브라우징을 고려한다면 사용하지 않는 것이... 좋다...! </mark>
+
+</body>
+</html>
