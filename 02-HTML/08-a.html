@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>a</title>
+</head>
+<body>
+    
+<h1>anchore</h1>
+<ul>
+    <li><a href="https://daum.net">daum</a></li>
+    <li><a href="https://daum.net" title="다음으로 이동">go daum</a></li>
+    <!-- 타이틀을 적용해야 하는 경우가 있다, 보충 설명을 하기 위해 -->
+    <li><a href="https://daum.net" target="_blank">daum 새 탭</a></li>
+    <li><a href="img/photo.jpg" tabindex="1" download>이미지</a></li>
+    <!-- 모든 브라우저가 적용이 되지 않을 수 있다. 다운로드라는 속성을 사용하면 다운로드가 적용이 된다.  -->
+    <li><a href="mailto:mc.haemil@gmail.com">mc.haemil@gmail.com</a></li>
+
+    <!-- 링크를 적용하는 법 -->
+    <li><a href="./01-charRef.html">문자참조</a></li>
+    <!-- ./ 는 현재 위치를 나타낸다. 그냥 특별하게 쓰지 않은 것과 같다. -->
+    <!-- ../ 는 상위 디렉토리를 가리킨다. -->
+    <!-- img/ 는 특정 폴더 안을 가리킨다. -->
+
+
+</ul>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aperiam voluptas quo rerum? Consectetur explicabo assumenda at laborum placeat repellendus sint aliquid velit quasi aliquam, sed doloremque? Dolorum, eaque cumque! <a href="http://wah.or.kr" accesskey="w" tabindex="2">웹 접근성 연구소</a></p>
+
+
+<!-- tabindex : tab 을 할 때마다 포커스를 적용받는다
+    tabindex의 적용을 받는 요소들, 
+    요소의 순서를 지정할 수 있다.!!!((()))
+    링크마다 다 써주는 요소는 아니다. 구조를 잘 짜주고 중요한 것만 정해주면 된다.  
+    a, input, button, select, textarea, ...
+-->
+<!-- accesskey :  단축키로 이동할 때 만드는 것
+    w를 지정해놓는다면 alt + w로 이동을 지정할 수 있다.
+-->
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>imagemap</title>
+</head>
+<body>
+    
+
+    <h1>이미지맵</h1>
+    <pre>
+        그림은 하나인데, 링크영역을 여러개 만들고 싶을 때 이미지맵을 사용한다.
+        이미지 태그와 맵 태그는 요소를 옆에(가급적 가까이) 만들어주는 게 직관적이고 보기 좋다.
+        그리고 이미지맵을 사용하기 위해서는 usemap 속성을 사용해 맵 태그와 연결해주어야 하는데 이때 
+        그리고 map 태그는 브라우저간 호환성을 고려하여 name, id 속성을 모두 사용하여 연결해야 안전하다.
+        
+        rect는 시작점과 끝점 두 개(coords="15,25, 218,84")만 쓰면 된다. 왼쪽위, 오른쪽 아래
+        circle 은 원의 중심점(x축, y축)과 반지름까지 총 3개(coords="308,55,53")의 값을 넣어주면 된다.  
+        poly는 다각형으로 찍어야 하는 모든 점의 위치를 찍음으로써 만들 수 있다. 
+        area 속성의 coords에 값을 표현하기 위해서는 그래픽 프로그램이 필요하다. 
+        
+    </pre>
+    <p>
+        <img src="img/map.gif" usemap="#map" alt="">
+        <!-- 이미지맵을 사용하기 위해서는 usemap 속성을 사용해 맵 태그와 연결해주어야 한다. -->
+        <map name="map" id="map">
+            <area shape="rect" coords="15,25, 218,84" href="http://naver.com" target="_blank" alt="네이버로 이동">
+            
+            <area shape="circle" coords="308,55,53" href="http://daum.net" alt="go daum">
+            
+            <area shape="poly" coords="550,34, 570,48, 570,65, 550,78, 532,65, 532,48" href="http://nate.com" alt="nate로 이동">
+        </map>
+    </p>
+
+
+</body>
+</html>
